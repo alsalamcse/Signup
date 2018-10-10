@@ -35,6 +35,7 @@ public class MainTabsActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    //sxhhd
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
