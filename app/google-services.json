@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "769893373415",
+    "firebase_url": "https://ekrmataskmngr2018.firebaseio.com",
+    "project_id": "ekrmataskmngr2018",
+    "storage_bucket": "ekrmataskmngr2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769893373415:android:8be0e7a4fc3673e4",
+        "android_client_info": {
+          "package_name": "com.awad.ekrma.ekrmataskmngr2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769893373415-d2shittr9olnfgkoaodg5cosk75tir49.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.awad.ekrma.ekrmataskmngr2018",
+            "certificate_hash": "013f43c9a5d380c46de43c04644418dbe5d2a253"
+          }
+        },
+        {
+          "client_id": "769893373415-s0eg3cdmge850rmsadimhlepud7cmu5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3Q8SfvTpB56GLH46IiHpfPl4h4PhW4_k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769893373415-s0eg3cdmge850rmsadimhlepud7cmu5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
