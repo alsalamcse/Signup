@@ -19,6 +19,10 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.awad.ekrma.ekrmataskmngr2018.taskfragments.MyTasksFragments;
+import com.awad.ekrma.ekrmataskmngr2018.taskfragments.ProfileFragment;
+import com.awad.ekrma.ekrmataskmngr2018.taskfragments.TaskHistoryFragment;
+
 public class MainTabsActivity extends AppCompatActivity {
 
     /**
@@ -35,7 +39,6 @@ public class MainTabsActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    //sxhhd
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,6 +134,9 @@ public class MainTabsActivity extends AppCompatActivity {
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
+        MyTasksFragments  myTasksFragments;
+        TaskHistoryFragment historyFragment;
+        ProfileFragment profileFragment;
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -138,8 +144,25 @@ public class MainTabsActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
+            if (position==0)
+            {
+                if (myTasksFragments == null)
+                    myTasksFragments = new MyTasksFragments();
+                return myTasksFragments;
+            }
+            if (position==1) {
+                if (myTasksFragments == null)
+                    historyFragment = new TaskHistoryFragment();
+                return myTasksFragments;
+            }
+
+                if (position==2)
+                {
+                    if (myTasksFragments == null)
+                       profileFragment = new ProfileFragment();
+                    return myTasksFragments;
+                }
+
             return PlaceholderFragment.newInstance(position + 1);
         }
 
@@ -147,6 +170,18 @@ public class MainTabsActivity extends AppCompatActivity {
         public int getCount() {
             // Show 3 total pages.
             return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            if (position==0)
+                return "Tasks";
+            if (position==1)
+                return "History";
+            if (position==2)
+                return "Profile";
+            return "noname";
+
         }
     }
 }
