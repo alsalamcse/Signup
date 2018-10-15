@@ -134,7 +134,7 @@ public class MainTabsActivity extends AppCompatActivity {
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
-        MyTasksFragments  myTasksFragments;
+        MyTasksFragments myTasksFragments;
         TaskHistoryFragment historyFragment;
         ProfileFragment profileFragment;
 
@@ -144,24 +144,22 @@ public class MainTabsActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            if (position==0)
-            {
+            if (position == 0) {
                 if (myTasksFragments == null)
                     myTasksFragments = new MyTasksFragments();
                 return myTasksFragments;
             }
-            if (position==1) {
+            if (position == 1) {
                 if (myTasksFragments == null)
                     historyFragment = new TaskHistoryFragment();
                 return myTasksFragments;
             }
 
-                if (position==2)
-                {
-                    if (myTasksFragments == null)
-                       profileFragment = new ProfileFragment();
-                    return myTasksFragments;
-                }
+            if (position == 2) {
+                if (myTasksFragments == null)
+                    profileFragment = new ProfileFragment();
+                return myTasksFragments;
+            }
 
             return PlaceholderFragment.newInstance(position + 1);
         }
@@ -172,16 +170,5 @@ public class MainTabsActivity extends AppCompatActivity {
             return 3;
         }
 
-        @Override
-        public CharSequence getPageTitle(int position) {
-            if (position==0)
-                return "Tasks";
-            if (position==1)
-                return "History";
-            if (position==2)
-                return "Profile";
-            return "noname";
-
-        }
     }
 }
