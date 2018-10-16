@@ -6,7 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class SignupActivity extends AppCompatActivity {
+    FirebaseAuth auth;// to establish sign in sign up
+    FirebaseUser user;//user
 
     private EditText firstname;
     private EditText lastname;
@@ -15,10 +21,13 @@ public class SignupActivity extends AppCompatActivity {
     private EditText password2;
     private Button save;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        auth=FirebaseAuth.getInstance();
+        user= auth.getCurrentUser();//
 
         firstname = (EditText) findViewById(R.id.firstname);
         lastname = (EditText) findViewById(R.id.lastname);
