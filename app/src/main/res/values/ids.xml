@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="password1" type="id">password1</item>
+    <item name="passw" type="id">password4</item>
+    <item name="email3" type="id" />
 </resources>
