@@ -23,12 +23,12 @@ public class SignupActivity extends AppCompatActivity {
     FirebaseAuth auth;// to establish sign in sign up
     FirebaseUser user;//user
 
-    private EditText firstname;
-    private EditText lastname;
-    private EditText email2;
-    private EditText phone;
-    private EditText password2;
-    private Button save;
+    private EditText etfirstname;
+    private EditText etlastname;
+    private EditText etemail2;
+    private EditText etphone;
+    private EditText etpassword2;
+    private Button btnsave;
     private String passw;
     private String email3;
 
@@ -41,21 +41,57 @@ public class SignupActivity extends AppCompatActivity {
         auth=FirebaseAuth.getInstance();
         user= auth.getCurrentUser();//
         
-        firstname = (EditText) findViewById(R.id.firstname);
-        lastname = (EditText) findViewById(R.id.lastname);
-        email2 = (EditText) findViewById(R.id.email2);
-        phone = (EditText) findViewById(R.id.phone);
-        password2 = (EditText) findViewById(R.id.password2);
-        save = (Button) findViewById(R.id.save);
+        etfirstname = (EditText) findViewById(R.id.etfirstname);
+        etlastname = (EditText) findViewById(R.id.etlastname);
+        etemail2 = (EditText) findViewById(R.id.etemail2);
+        etphone = (EditText) findViewById(R.id.etphone);
+        etpassword2 = (EditText) findViewById(R.id.etpassword2);
+        btnsave = (Button) findViewById(R.id.btnsave);
 
-        save.setOnClickListener(new View.OnClickListener() {
+        btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                dataHandler();
+
             }
         });
     }
 
+    /**
+     * get email and password from the field and try to create new user
+     */
+    private void dataHandler()
+    {
+        boolean isok=true;// if all the fields filled well
+        String email=etemail2.getText().toString();
+        String passw1=etpassword2.getText().toString();
+        String fname=etfirstname.getText().toString();
+        String lname=etlastname.getText().toString();
+        String phone=etphone.getText().toString();
+        if (email.length()<4 || email.indexOf('@')<0 || email.indexOf('.')<0)
+        {
+            etemail2.setError("Wrong Email");
+             isok = false;
+        }
+        if (etpassword2.length()<8)
+        {
+            etpassword2.setError("Have to be at least 8 char");
+            isok=false;
+        }
+        if (isok)
+        {
+            creatAcount(email,passw1);
+        }
+
+    }
+
+    //4.
+
+    /**
+     * create firebase user using email and password
+     * @param email user email
+     * @param passw user password
+     */
 
     private void creatAcount(String email, String passw) {
         auth.createUserWithEmailAndPassword(email,passw).addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
