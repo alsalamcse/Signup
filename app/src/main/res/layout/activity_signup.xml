@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="85dp">
+        tools:layout_editor_absoluteY="85dp"
+        tools:ignore="MissingConstraints">
 
         <EditText
             android:id="@+id/firstname"
@@ -68,7 +69,8 @@
             android:onClick="onclick"
             android:text="Save"
             tools:layout_editor_absoluteX="125dp"
-            tools:layout_editor_absoluteY="390dp" />
+            tools:layout_editor_absoluteY="390dp"
+            tools:ignore="OnClick" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
