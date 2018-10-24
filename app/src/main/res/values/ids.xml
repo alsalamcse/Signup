@@ -9,4 +9,5 @@
     <item name="etphone" type="id">etphone</item>
     <item name="etpassword2" type="id">etpassword2</item>
     <item name="btnsave" type="id">btnsave</item>
+    <item name="etDueDate" type="id">etDueDatee</item>
 </resources>
