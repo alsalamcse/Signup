@@ -38,9 +38,9 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         //3.
-        auth=FirebaseAuth.getInstance();
-        user= auth.getCurrentUser();//
-        
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();//
+
         etfirstname = (EditText) findViewById(R.id.etfirstname);
         etlastname = (EditText) findViewById(R.id.etlastname);
         etemail2 = (EditText) findViewById(R.id.etemail2);
@@ -51,11 +51,11 @@ public class SignupActivity extends AppCompatActivity {
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dataHandler();
 
             }
         });
     }
+
 
     /**
      * get email and password from the field and try to create new user

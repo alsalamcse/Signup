@@ -6,11 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class AddTAskActivity extends AppCompatActivity {
     private EditText etText,etTitle,etDueDate;
     private SeekBar skImportant,skNecessary;
     private Button btnsave,btnDatePicker;
+    private TextView tvImportant,tvNecessary;
 
 
 
