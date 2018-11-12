@@ -75,7 +75,7 @@ public class SignupActivity extends AppCompatActivity {
         }
         if (etpassword2.length()<8)
         {
-            etpassword2.setError("Have to be at least 8 char");
+            etpassword2.setError("Have to be at least 8 chars");
             isok=false;
         }
         if (isok)
