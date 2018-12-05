@@ -47,7 +47,7 @@ public class AddTAskActivity extends AppCompatActivity {
         btnsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dataHandler();
             }
         });
         btnDatePicker.setOnClickListener(new View.OnClickListener() {
@@ -83,8 +83,8 @@ public class AddTAskActivity extends AppCompatActivity {
             if (isOk)
             {
                 MyTask1 task1=new MyTask1();
-                task1.setCreatedAT(new Date());
-                task1.setDueDate(new Date(duedate1));
+                task1.setCreatedAT(new Date().getTime());
+                task1.setDueDate(new Date(duedate1).getTime());
                 task1.setText(text1);
                 task1.setTitle(title1);
                 task1.setImportant(important1);

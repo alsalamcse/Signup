@@ -9,8 +9,8 @@ public class MyTask1
     private String text;
     private int important;
     private int necessary;
-    private Date createdAT;
-    private Date dueDate;
+    private long createdAT;
+    private long dueDate;
     public String owner;
 
     public MyTask1()
@@ -58,19 +58,19 @@ public class MyTask1
         this.necessary = necessary;
     }
 
-    public Date getCreatedAT(Date date) {
+    public long getCreatedAT(long date) {
         return createdAT;
     }
 
-    public void setCreatedAT(Date createdAT) {
+    public void setCreatedAT(long createdAT) {
         this.createdAT = createdAT;
     }
 
-    public Date getDueDate(Date date) {
+    public long getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(long dueDate) {
         this.dueDate = dueDate;
     }
 
