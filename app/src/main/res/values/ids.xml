@@ -11,4 +11,8 @@
     <item name="btnsave" type="id">btnsave</item>
     <item name="etDueDate" type="id">etDueDatee</item>
     <item name="etCreatedate" type="id">etCreatedate</item>
+    <item name="etEmail1" type="id">etEmail1</item>
+    <item name="etPassword1" type="id">etPassword1</item>
+    <item name="btnSignin" type="id">btnSignin</item>
+    <item name="btnSignup" type="id">btnSignup</item>
 </resources>
