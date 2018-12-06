@@ -1,9 +1,6 @@
 package com.awad.ekrma.ekrmataskmngr2018;
 
-import java.util.Date;
-
-public class MyTask1
-{
+public class MyTask1 {
     private String key;// key:unique id for each object. have to be....
     private String title;
     private String text;
@@ -13,8 +10,7 @@ public class MyTask1
     private long dueDate;
     public String owner;
 
-    public MyTask1()
-    {
+    public MyTask1() {
 
     }
 
@@ -90,8 +86,16 @@ public class MyTask1
     public void setOwner(String owner) {
         this.owner = owner;
     }
-}
 
+    public void getText() {
+    }
+
+    public static void add(MyTask1 task1) {
+    }
+
+    public class ITEMS {
+    }
+}
 
 
 

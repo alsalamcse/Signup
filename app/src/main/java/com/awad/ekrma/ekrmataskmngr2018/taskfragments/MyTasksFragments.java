@@ -12,8 +12,6 @@ import android.view.ViewGroup;
 
 import com.awad.ekrma.ekrmataskmngr2018.MyTask1;
 import com.awad.ekrma.ekrmataskmngr2018.R;
-import com.awad.ekrma.ekrmataskmngr2018.taskfragments.dummy.DummyContent;
-import com.awad.ekrma.ekrmataskmngr2018.taskfragments.dummy.DummyContent.DummyItem;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.awad.ekrma.ekrmataskmngr2018.MyTask1.*;
 
 /**
  * A fragment representing a list of Items.
@@ -77,21 +77,27 @@ public class MyTasksFragments extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(readTasks(), mListener));
         }
         return view;
     }
 
     private List<MyTask1> readTasks()
     {
-        ArrayList MyTask1=null;
+        final ArrayList<MyTask1> myTask1s=new ArrayList<>();
         //reference to the database root
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
 
-        reference.child("MyTasks").addValueEventListener(new ValueEventListener() {
+        reference.child("MyTasks");
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
-            {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot d : dataSnapshot.getChildren())
+                {
+                    MyTask1 task1 = d.getValue(MyTask1.class);
+                    MyTask1.add(task1);
+
+                }
 
             }
 
@@ -133,6 +139,6 @@ public class MyTasksFragments extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(MyTask1 item);
     }
 }
