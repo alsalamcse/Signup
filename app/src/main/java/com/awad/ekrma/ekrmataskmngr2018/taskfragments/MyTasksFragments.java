@@ -10,10 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.awad.ekrma.ekrmataskmngr2018.MyTask1;
 import com.awad.ekrma.ekrmataskmngr2018.R;
 import com.awad.ekrma.ekrmataskmngr2018.taskfragments.dummy.DummyContent;
 import com.awad.ekrma.ekrmataskmngr2018.taskfragments.dummy.DummyContent.DummyItem;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -73,6 +80,27 @@ public class MyTasksFragments extends Fragment {
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         return view;
+    }
+
+    private List<MyTask1> readTasks()
+    {
+        ArrayList MyTask1=null;
+        //reference to the database root
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+
+        reference.child("MyTasks").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        return MyTask1;
     }
 
 
