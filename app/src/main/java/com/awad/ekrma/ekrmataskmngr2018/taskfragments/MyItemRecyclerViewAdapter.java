@@ -11,6 +11,8 @@ import com.awad.ekrma.ekrmataskmngr2018.R;
 import com.awad.ekrma.ekrmataskmngr2018.taskfragments.MyTasksFragments.OnListFragmentInteractionListener;
 import com.awad.ekrma.ekrmataskmngr2018.taskfragments.dummy.DummyContent.DummyItem;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 /**

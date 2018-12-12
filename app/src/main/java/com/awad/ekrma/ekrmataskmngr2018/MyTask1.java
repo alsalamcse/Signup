@@ -87,7 +87,8 @@ public class MyTask1 {
         this.owner = owner;
     }
 
-    public void getText() {
+    public String getText() {
+        return text;
     }
 
     public static void add(MyTask1 task1) {

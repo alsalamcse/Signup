@@ -82,16 +82,15 @@ public class MyTasksFragments extends Fragment {
         return view;
     }
 
-    private List<MyTask1> readTasks()
-    {
-        final ArrayList<MyTask1> myTask1s=new ArrayList<>();
+    private List<MyTask1> readTasks() {
+        final ArrayList<MyTask1> myTask1s = new ArrayList<>();
         //reference to the database root
-        DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
-        reference.child("MyTasks");
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.child("MyTasks").addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
                 for (DataSnapshot d : dataSnapshot.getChildren())
                 {
                     MyTask1 task1 = d.getValue(MyTask1.class);
@@ -106,7 +105,7 @@ public class MyTasksFragments extends Fragment {
 
             }
         });
-        return MyTask1;
+        return myTask1s;
     }
 
 
